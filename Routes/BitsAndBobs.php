@@ -46,11 +46,11 @@ Route::get('user/profile', 'UserController@showProfile')->name('profile');
 
 //Route groups allows routes to share common features such as middleware or Path name
 Route::group(['middleware' => 'auth', 'prefix' => 'shared', 'namespace' => 'Admin', 'domain' => '{acc}.me.com'], function () {
-    Route::get('/', function ()    {
+    Route::get('/', function ($acc)    {
         // Uses Auth Middleware and matches '/shared'
     });
 
-    Route::get('user/profile', function () {
+    Route::get('user/profile', function ($acc) {
         // Uses Auth Middleware and matches '/shared/user/profile'
     });
     Route::get('something', 'SomeController@doSomething');
