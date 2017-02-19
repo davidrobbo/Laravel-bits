@@ -38,7 +38,7 @@ class TestFacadeProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('rocket', function($app){
-            return new RocketShip();
+            return new Rocket();
         });
     }
 }
